@@ -19,7 +19,20 @@ class Blockchain(object):
         pass
 
     def getInfo(self):
-        info = "Number of wallets: " + str(len(self.wallets)) + "\n" + "Number of transactions: " + str(len(self.transactions)) + "\n";
+        info = "Number of wallets: " + \
+        str(len(self.wallets)) + "\n" + \
+         "Number of transactions: " + \
+         str(len(self.transactions)) + "\n";
+        return info
+
+    def getMoreInfo(self):
+        info = "\nWallets:\n"
+        for wallet in self.wallets:
+            #ascii art :)
+            info += "===============\n"
+            info += ("walletID: " + str(wallet.walletID) + "\n")
+            info += ("balance: " + str(wallet.balance) + "\n")
+            info += "===============\n\n"
         return info
 
 GLOBAL_BLOCKCHAIN = Blockchain()
